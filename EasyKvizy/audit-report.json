@@ -1,0 +1,481 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@expo/cli": {
+      "name": "@expo/cli",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@expo/config",
+        "@expo/config-plugins",
+        "@expo/dev-server",
+        "@expo/metro-config",
+        "@expo/prebuild-config"
+      ],
+      "effects": [
+        "expo"
+      ],
+      "range": "0.0.1-canary-20231125-d600e44 - 0.10.2",
+      "nodes": [
+        "node_modules/@expo/cli"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "@expo/config": {
+      "name": "@expo/config",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@expo/config-plugins",
+        "semver"
+      ],
+      "effects": [
+        "@expo/cli",
+        "@expo/metro-config",
+        "@expo/prebuild-config",
+        "expo-constants"
+      ],
+      "range": "3.3.23-alpha.0 - 8.1.0",
+      "nodes": [
+        "node_modules/@expo/cli/node_modules/@expo/config",
+        "node_modules/@expo/metro-config/node_modules/@expo/config",
+        "node_modules/@expo/prebuild-config/node_modules/@expo/config",
+        "node_modules/expo/node_modules/@expo/config"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "@expo/config-plugins": {
+      "name": "@expo/config-plugins",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "xml2js"
+      ],
+      "effects": [
+        "@expo/config",
+        "expo-file-system"
+      ],
+      "range": "<=7.1.0",
+      "nodes": [
+        "node_modules/@expo/cli/node_modules/@expo/config-plugins",
+        "node_modules/@expo/metro-config/node_modules/@expo/config-plugins",
+        "node_modules/@expo/prebuild-config/node_modules/@expo/config-plugins",
+        "node_modules/expo-file-system/node_modules/@expo/config-plugins",
+        "node_modules/expo/node_modules/@expo/config-plugins"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "@expo/dev-server": {
+      "name": "@expo/dev-server",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@expo/metro-config",
+        "body-parser",
+        "semver"
+      ],
+      "effects": [
+        "@expo/cli"
+      ],
+      "range": "<=0.5.0",
+      "nodes": [
+        "node_modules/@expo/dev-server"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "@expo/image-utils": {
+      "name": "@expo/image-utils",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "semver"
+      ],
+      "effects": [
+        "@expo/prebuild-config"
+      ],
+      "range": "<=0.0.1-canary-20240109-93608d8 || 0.3.10-alpha.0 - 0.4.2",
+      "nodes": [
+        "node_modules/@expo/prebuild-config/node_modules/@expo/image-utils"
+      ],
+      "fixAvailable": true
+    },
+    "@expo/metro-config": {
+      "name": "@expo/metro-config",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@expo/config"
+      ],
+      "effects": [
+        "@expo/dev-server"
+      ],
+      "range": "0.1.49-alpha.0 - 0.9.0",
+      "nodes": [
+        "node_modules/@expo/metro-config"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "@expo/prebuild-config": {
+      "name": "@expo/prebuild-config",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@expo/config",
+        "@expo/config-plugins",
+        "@expo/image-utils",
+        "semver",
+        "xml2js"
+      ],
+      "effects": [],
+      "range": "<=7.0.0-beta.0",
+      "nodes": [
+        "node_modules/@expo/prebuild-config"
+      ],
+      "fixAvailable": true
+    },
+    "@expo/server": {
+      "name": "@expo/server",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "@remix-run/node"
+      ],
+      "effects": [
+        "expo-router"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@expo/server"
+      ],
+      "fixAvailable": true
+    },
+    "@remix-run/node": {
+      "name": "@remix-run/node",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "@remix-run/server-runtime"
+      ],
+      "effects": [
+        "@expo/server"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@remix-run/node"
+      ],
+      "fixAvailable": true
+    },
+    "@remix-run/server-runtime": {
+      "name": "@remix-run/server-runtime",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "cookie"
+      ],
+      "effects": [
+        "@remix-run/node"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/@remix-run/server-runtime"
+      ],
+      "fixAvailable": true
+    },
+    "body-parser": {
+      "name": "body-parser",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099520,
+          "name": "body-parser",
+          "dependency": "body-parser",
+          "title": "body-parser vulnerable to denial of service when url encoding is enabled",
+          "url": "https://github.com/advisories/GHSA-qwcr-r2fm-qrc7",
+          "severity": "high",
+          "cwe": [
+            "CWE-405"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<1.20.3"
+        },
+        "qs"
+      ],
+      "effects": [
+        "@expo/dev-server"
+      ],
+      "range": "<=1.20.2",
+      "nodes": [
+        "node_modules/@expo/dev-server/node_modules/body-parser"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "cookie": {
+      "name": "cookie",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1099846,
+          "name": "cookie",
+          "dependency": "cookie",
+          "title": "cookie accepts cookie name, path, and domain with out of bounds characters",
+          "url": "https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
+          "severity": "low",
+          "cwe": [
+            "CWE-74"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.7.0"
+        }
+      ],
+      "effects": [
+        "@remix-run/server-runtime"
+      ],
+      "range": "<0.7.0",
+      "nodes": [
+        "node_modules/@remix-run/server-runtime/node_modules/cookie"
+      ],
+      "fixAvailable": true
+    },
+    "expo": {
+      "name": "expo",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "@expo/cli",
+        "expo-constants",
+        "expo-file-system"
+      ],
+      "effects": [],
+      "range": "40.0.0-alpha.0 - 40.0.0-beta.5 || 41.0.0-alpha.0 - 49.0.0-beta.5",
+      "nodes": [
+        "node_modules/expo"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "expo-constants": {
+      "name": "expo-constants",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@expo/config"
+      ],
+      "effects": [
+        "expo"
+      ],
+      "range": "10.1.2 - 14.4.0",
+      "nodes": [
+        "node_modules/expo/node_modules/expo-constants"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "expo-file-system": {
+      "name": "expo-file-system",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@expo/config-plugins"
+      ],
+      "effects": [
+        "expo"
+      ],
+      "range": "10.0.0 - 14.1.0",
+      "nodes": [
+        "node_modules/expo-file-system"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "expo-router": {
+      "name": "expo-router",
+      "severity": "low",
+      "isDirect": true,
+      "via": [
+        "@expo/server"
+      ],
+      "effects": [],
+      "range": "<=0.0.1-canary-20240418-8d74597 || >=3.1.1",
+      "nodes": [
+        "node_modules/expo-router"
+      ],
+      "fixAvailable": true
+    },
+    "qs": {
+      "name": "qs",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096472,
+          "name": "qs",
+          "dependency": "qs",
+          "title": "qs vulnerable to Prototype Pollution",
+          "url": "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+          "severity": "high",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=6.7.0 <6.7.3"
+        }
+      ],
+      "effects": [
+        "body-parser"
+      ],
+      "range": "6.7.0 - 6.7.2",
+      "nodes": [
+        "node_modules/@expo/dev-server/node_modules/qs"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "semver": {
+      "name": "semver",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098562,
+          "name": "semver",
+          "dependency": "semver",
+          "title": "semver vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-c2qf-rxjj-qqgw",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=7.0.0 <7.5.2"
+        }
+      ],
+      "effects": [
+        "@expo/config",
+        "@expo/dev-server",
+        "@expo/image-utils",
+        "@expo/prebuild-config"
+      ],
+      "range": "7.0.0 - 7.5.1",
+      "nodes": [
+        "node_modules/@expo/cli/node_modules/@expo/config/node_modules/semver",
+        "node_modules/@expo/dev-server/node_modules/semver",
+        "node_modules/@expo/metro-config/node_modules/semver",
+        "node_modules/@expo/prebuild-config/node_modules/semver",
+        "node_modules/expo/node_modules/@expo/config/node_modules/semver"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    },
+    "xml2js": {
+      "name": "xml2js",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1096693,
+          "name": "xml2js",
+          "dependency": "xml2js",
+          "title": "xml2js is vulnerable to prototype pollution",
+          "url": "https://github.com/advisories/GHSA-776f-qx25-q3cc",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1321"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<0.5.0"
+        }
+      ],
+      "effects": [
+        "@expo/config-plugins",
+        "@expo/prebuild-config"
+      ],
+      "range": "<0.5.0",
+      "nodes": [
+        "node_modules/@expo/cli/node_modules/xml2js",
+        "node_modules/@expo/metro-config/node_modules/xml2js",
+        "node_modules/@expo/prebuild-config/node_modules/xml2js",
+        "node_modules/expo-file-system/node_modules/xml2js",
+        "node_modules/expo/node_modules/xml2js"
+      ],
+      "fixAvailable": {
+        "name": "expo",
+        "version": "51.0.37",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 5,
+      "moderate": 3,
+      "high": 11,
+      "critical": 0,
+      "total": 19
+    },
+    "dependencies": {
+      "prod": 1436,
+      "dev": 279,
+      "optional": 10,
+      "peer": 10,
+      "peerOptional": 0,
+      "total": 1733
+    }
+  }
+}

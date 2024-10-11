@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "expo": "^51.0.37",
+    "expo-router": "~3.5.23",
+    "i18next": "^23.15.2",
+    "react-i18next": "^15.0.2",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}
